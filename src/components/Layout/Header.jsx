@@ -111,9 +111,8 @@ const Header = ({ activeHeading }) => {
         </div>
       </div>
       <div
-        className={`${
-          active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        } transition hidden 800px:flex items-center justify-between w-full bg-[#3321c8] h-[70px]`}
+        className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
+          } transition hidden 800px:flex items-center justify-between w-full bg-[#3321c8] h-[70px]`}
       >
         <div
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
@@ -204,9 +203,8 @@ const Header = ({ activeHeading }) => {
 
       {/* mobile header */}
       <div
-        className={`${
-          active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        }
+        className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
+          }
       w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}
       >
         <div className="w-full flex items-center justify-between">
@@ -279,14 +277,14 @@ const Header = ({ activeHeading }) => {
                   value={searchTerm}
                   onChange={handleSearchChange}
                 />
-                {searchData && (
+                {searchData && searchData.length !== 0 ? (
                   <div className="absolute bg-[#fff] z-10 shadow w-full left-0 p-3">
-                    {searchData.map((i) => {
-                      const d = i.name;
+                    {searchData && searchData.map((i) => {
+                      // const d = i.name;/
 
-                      const Product_name = d.replace(/\s+/g, "-");
+                      // const Product_name = d.replace(/\s+/g, "-");
                       return (
-                        <Link to={`/product/${Product_name}`}>
+                        <Link to={`/product/${i._id}`}>
                           <div className="flex items-center">
                             <img
                               src={i.image_Url[0]?.url}
@@ -297,9 +295,9 @@ const Header = ({ activeHeading }) => {
                           </div>
                         </Link>
                       );
-                    })}
+                    })}                    
                   </div>
-                )}
+                ):null}
               </div>
 
               <Navbar active={activeHeading} />

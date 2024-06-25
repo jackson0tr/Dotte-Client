@@ -33,11 +33,18 @@ const Footer = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const newForm = new FormData();
+
+      newForm.append("senderEmail", senderEmail);
+
     dispatch(subscribe({
       senderEmail
     }))
-    toast.success("Mail sent successfully!!")
-    setSenderEmail("");
+    toast.success("Mail sent successfully!!");
+
+    setTimeout(() => {
+      window.location.reload();
+  }, 2000)
   }
 
   
@@ -52,6 +59,7 @@ const Footer = () => {
         </h1>
         <form onSubmit={handleSubmit}>
           <input
+            id="email"
             type="email"
             required
             value={senderEmail}
@@ -60,7 +68,7 @@ const Footer = () => {
             className="text-gray-800
                 sm:w-72 w-full sm:mr-5 mr-1 lg:mb-0 mb-4 py-2.5 rounded px-2 focus:outline-none"
           />
-          <input type="Submit" onClick={handleSubmit} className="bg-[#56d879] hover:bg-teal-500 duration-300 px-5 py-2.5 rounded-md text-whie md:w-auto w-full"/>
+          <input type="submit" value="Submit" className="bg-[#56d879] hover:bg-teal-500 duration-300 px-5 py-2.5 rounded-md text-whie md:w-auto w-full"/>
         </form>
       </div>
       <div className="grid grid-cols-1 sm:gird-cols-3 lg:grid-cols-4 gap-6 sm:px-8 px-5 py-16 sm:text-center">

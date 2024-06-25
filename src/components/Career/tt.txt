@@ -1,0 +1,59 @@
+{
+                openForm && (
+                  <div className="w-[90%] 800px:w-[50%] bg-white justify-center flex shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll">
+                    <h1>Job Form</h1>
+                    <form onSubmit={handleSubmit}>
+                      <label value={name}>Full Name</label>
+                      <input onChange={(e) => setName(e.target.value)} type="text" required placeholder="Enter your Full Name"
+                        className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                      <br />
+                      <label value={email}>Email</label>
+                      <input onChange={(e) => setEmail(e.target.value)} type="email" required placeholder="Enter your Email"
+                        className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                      <br />
+                      <label value={jobTitle}>Job Title</label>
+                      <input onChange={(e) => setJobTitle(e.target.value)} type="text" required placeholder="Enter your Job Title"
+                        className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                      <br />
+                      <label value={phoneNumber}>Phone Number</label>
+                      <input onChange={(e) => setPhoneNumber(e.target.value)} type="number" required placeholder="Enter your Phone Number"
+                        className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                      <br />
+                      <label value={categoryJob}>Category</label>
+                      <input onChange={(e) => setCategoryJob(e.target.value)} type="text" required placeholder="Enter your Category"
+                        className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                      <br />
+                      <div className="w-full">
+                        <input
+                          type="file"
+                          accept=".pdf,.doc,.docx,.txt,image/*"
+                          id='file'
+                          className='hidden'
+                          onChange={handleFileChange} />
+                        <label
+                          onDragOver={handleDragOver}
+                          onDrop={handleDrop}
+                          onDragLeave={handleDragLeave}
+                          className={`w-full min-h-[10vh] dark:border-[#fff] border-[#00000026] p-3 flex border items-center justify-center ${dragging ? 'bg-[#00b4ff]' : 'bg-transparent'
+                            } `}
+                          htmlFor="file">
+                          {
+                            cv ? (
+                              <img
+                                src={cv}
+                                alt="cv"
+                                className='max-h-full w-full object-cover' />
+                            ) : (
+                              <span className='text-[#333] cursor-pointer dark:text-[#fff]'>
+                                قم بسحب ز اسقاط الصورة المصغرة لبخاصة بك او انقر للتصفح
+                                {/* Darg and Drop your thumbnail or click to browse */}
+                              </span>
+                             ) 
+                           } 
+                         </label> 
+                       </div> 
+                       <br />
+                     </form>
+                   </div>
+                 )
+               }  

@@ -87,7 +87,7 @@ const Contact = () => {
             <div className="flex justify-center items-center min-h-[100vh]">
                 <div className="relative w-full h-[100vh] flex items-center justify-center 2bg-teal-400">
                     <div className="w-full h-[550px] grid grid-cols-1 800px:grid-cols-2 max-w-[820px] rounded-[20px] shadow-md overflow-hidden ">
-                        <div className="800px:block none bg-[#fff]">
+                        <div className="800px:block hidden bg-[#fff]">
                             <div className="pl-[16px] pt-[20px] text-[35px] text-teal-400">
                                 Let's get in touch
                             </div>

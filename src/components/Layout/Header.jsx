@@ -279,7 +279,7 @@ const Header = ({ activeHeading }) => {
                 />
                 {searchData && searchData.length !== 0 ? (
                   <div className="absolute bg-[#fff] z-10 shadow w-full left-0 p-3">
-                    {searchData && searchData.map((i) => {
+                    {searchData && searchData.map((i,index) => {
                       // const d = i.name;/
 
                       // const Product_name = d.replace(/\s+/g, "-");
@@ -287,15 +287,16 @@ const Header = ({ activeHeading }) => {
                         <Link to={`/product/${i._id}`}>
                           <div className="flex items-center">
                             <img
-                              src={i.image_Url[0]?.url}
-                              alt=""
+                              // src={i.image_Url[0]?.url}
+                              src={`${i.images[0]?.url}`}
+                              alt="img"
                               className="w-[50px] mr-2"
                             />
                             <h5>{i.name}</h5>
                           </div>
                         </Link>
                       );
-                    })}                    
+                    })}
                   </div>
                 ):null}
               </div>

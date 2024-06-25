@@ -133,7 +133,7 @@ const Contact = () => {
                                         onChange={(e) => setSenderEmail(e.target.value)}
                                         value={senderEmail}
                                         placeholder="Enter Your Email"
-                                        required id="email" className="w-full h-full transparent border-2 border-solid border-[#fff] rounded-[20px] pl-2 outline-none text-[16px]  " type="text" />
+                                        required id="email" className="w-full h-full transparent border-2 border-solid border-[#fff] rounded-[20px] pl-2 outline-none text-[16px]  " type="email" />
                                 </div>
                                 <div className="h-[40px] input_box my-[30px] mx-0 relative w-[70%]">
                                     <input

@@ -24,8 +24,9 @@ const ProductDetailsPage = () => {
       const data = allProducts && allProducts.find((i) => i._id === id);
       setData(data);
     }
+    window.scrollTo(0,0); 
   }, [allProducts, allEvents]);
-
+  
   return (
     <>
     <Helmet>

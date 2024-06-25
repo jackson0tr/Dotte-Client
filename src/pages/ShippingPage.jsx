@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "../components/Layout/Footer";
 import Header from "../components/Layout/Header";
 import styles from "../styles/styles";
@@ -6,6 +6,11 @@ import { Helmet } from "react-helmet-async";
 import { host } from "../server";
 
 const ShippingPage = () => {
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[])
+
     return (
         <>
         <Helmet>

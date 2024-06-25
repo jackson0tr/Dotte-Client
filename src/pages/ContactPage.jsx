@@ -37,18 +37,18 @@ const Contact = () => {
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
 
-    useEffect(()=>{
-        if(success){
-            toast.success("Email Sent Successfully!!");
-            setTimeout(()=>{
-                window.location.reload();
-            },2000)
-        }
-        if(error){
-            toast.error(error.message);
-            console.log("ERROR: ",error)
-        }
-    },[success,dispatch,error])
+    // useEffect(()=>{
+    //     if(success){
+    //         toast.success("Email Sent Successfully!!");
+    //         setTimeout(()=>{
+    //             window.location.reload();
+    //         },2000)
+    //     }
+    //     if(error){
+    //         toast.error(error.message);
+    //         console.log("ERROR: ",error)
+    //     }
+    // },[success,dispatch,error])
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -72,11 +72,11 @@ const Contact = () => {
             subject
         }));
 
-        // toast.success("Email Sent Successfully!!");
+        toast.success("Email Sent Successfully!!");
 
-        // setTimeout(() => {
-        //     window.location.reload();
-        // }, 2000)
+        setTimeout(() => {
+            window.location.reload();
+        }, 2000)
     }
 
 
@@ -86,8 +86,8 @@ const Contact = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Contact US</h2>
             <div className="flex justify-center items-center min-h-[100vh]">
                 <div className="relative w-full h-[100vh] flex items-center justify-center 2bg-teal-400">
-                    <div className="w-full h-[550px] grid grid-cols-2 max-w-[820px] rounded-[20px] shadow-md overflow-hidden ">
-                        <div className="bg-[#fff]">
+                    <div className="w-full h-[550px] grid grid-cols-1 800px:grid-cols-2 max-w-[820px] rounded-[20px] shadow-md overflow-hidden ">
+                        <div className="800px:block none bg-[#fff]">
                             <div className="pl-[16px] pt-[20px] text-[35px] text-teal-400">
                                 Let's get in touch
                             </div>
@@ -125,41 +125,29 @@ const Contact = () => {
                                     <input
                                         onChange={(e) => setSenderName(e.target.value)}
                                         placeholder="Enter Your Name"
-                                        // onChange={handleChange} 
                                         value={senderName}
-                                        // value={formData.name} 
                                         required id="name" className="w-full h-full transparent border-2 border-solid border-[#fff] rounded-[20px] pl-2 outline-none text-[16px]  " type="text" />
-                                    {/* <label className="absolute top-[50%] left-[10px] pl-2 text-[15px] font-semibold text-teal-400 translate-y-[-50%] " htmlFor="">Full Name</label> */}
                                 </div>
                                 <div className="h-[40px] input_box my-[30px] mx-0 relative w-[70%]">
                                     <input
-                                        // onChange={handleChange} 
                                         onChange={(e) => setSenderEmail(e.target.value)}
                                         value={senderEmail}
                                         placeholder="Enter Your Email"
-                                        // value={formData.email} 
                                         required id="email" className="w-full h-full transparent border-2 border-solid border-[#fff] rounded-[20px] pl-2 outline-none text-[16px]  " type="text" />
-                                    {/* <label className="absolute top-[50%] left-[10px] pl-2 text-[15px] font-semibold text-teal-400 translate-y-[-50%] " htmlFor="">Email</label> */}
                                 </div>
                                 <div className="h-[40px] input_box my-[30px] mx-0 relative w-[70%]">
                                     <input
-                                        // onChange={handleChange}
                                         onChange={(e) => setSubject(e.target.value)}
                                         value={subject}
                                         placeholder="Enter Your Main Topic"
-                                        //  value={formData.subject} 
                                         id="subject" required className="w-full h-full transparent border-2 border-solid border-[#fff] rounded-[20px] pl-2 outline-none text-[16px]  " type="text" />
-                                    {/* <label className="absolute top-[50%] left-[10px] pl-2 text-[15px] font-semibold text-teal-400 translate-y-[-50%] " htmlFor="">Subject</label> */}
                                 </div>
                                 <div className="h-[40px] input_box my-[30px] mx-0 relative w-[70%]">
                                     <textarea
-                                        // onChange={handleChange} 
                                         onChange={(e) => setMessage(e.target.value)}
                                         value={message}
                                         placeholder="Enter Your Message"
-                                        // value={formData.message} 
                                         required name="" className="w-full overflow-auto resize-none min-h-[150px] h-full transparent border-2 border-solid border-[#fff] rounded-[20px] pl-2 outline-none text-[16px]" id="message" cols="30" rows="10"></textarea>
-                                    {/* <label className="absolute top-[50%] left-[10px] pl-2 text-[15px] font-semibold text-teal-400 translate-y-[-50%] " htmlFor="">Message</label> */}
                                 </div>
                                 <input type="submit" className="relative top-[100px] outline-none border-none w-[30%] h-[45px] rounded-[4px] text-[16px] text-teal-400 bg-[#fff] shadow-md cursor-pointer hover:bg-teal-400 hover:text-[#fff] " value="Submit" />
                             </form>

@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     
     <div
-      className={`relative min-h-[70vh] 800px:min-h-[80vh] w-full bg-no-repeat ${styles.noramlFlex}`}
+      className={`relative min-h-[70vh] 800px:min-h-[80vh] w-full bg-cover bg-no-repeat ${styles.noramlFlex}`}
       style={{
         backgroundImage: `url(${bg})`,
         

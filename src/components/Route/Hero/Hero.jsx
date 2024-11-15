@@ -9,7 +9,8 @@ const Hero = () => {
     <div
       className={`relative min-h-[70vh] 800px:min-h-[80vh] w-full bg-cover bg-no-repeat ${styles.noramlFlex}`}
       style={{
-        backgroundImage: `url(${bg})`,
+        backgroundImage: "url(https://themes.rslahmed.dev/rafcart/assets/images/banner-2.jpg)",
+        // backgroundImage: `url(${bg})`,
         
       }}
     >
